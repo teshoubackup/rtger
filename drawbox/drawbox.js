@@ -12,9 +12,9 @@
 				     `\\´´\¸.·´
         
 */
-const GOOGLE_FORM_ID = "1FAIpQLSc1gDXrg8BcNyl6loBQ70Eveo2tt6dSFQwx6K-TJYYz1dHKIg";
-const ENTRY_ID = "entry.1015153735";
-const GOOGLE_SHEET_ID = "1Pmo09H1sQ5zZJfb62wa2wA-RC500JMmwNYnwl1WbdeI";
+const GOOGLE_FORM_ID = "1FAIpQLSfFxmaycacWiaYIHjyKEo39GQu9ABY9nCDpe0jg_93AixzU2Q";
+const ENTRY_ID = "entry.863759224=eee";
+const GOOGLE_SHEET_ID = "1YbG-XpYp48EgXqhEYyPbtvIXx3L2CazjUrZrflwucfw";
 const DISPLAY_IMAGES = true;
 
 /*
@@ -194,5 +194,6 @@ async function fetchImages() {
     document.getElementById("gallery").textContent = "Failed to load images.";
   }
 }
+
 
 fetchImages();
