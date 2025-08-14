@@ -1,0 +1,336 @@
+<!DOCTYPE html><html lang="en"><head><script src=".nekoweb-api/static/site.js" type="text/javascript" defer=""></script>
+	
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" type="text/css" media="all">
+  <link rel="icon" type="image/png" href="rice/torocon.png">
+  <title>drawbox.exe</title>
+  <meta property="og:title" content="drawbox">
+  <meta property="og:description" content="bajo drawbox, just draw somewthing idk">
+  <meta property="og:url" content="https://rice.place/drawbox.html">
+  <meta property="og:image" content="rice/bitch.jpg">
+
+  
+<style>
+
+@font-face {
+font-family:font;
+src:url("font/azuki.ttf");
+}
+
+body {
+font-family:font;
+font-size:16px;
+color:#124375;
+background-color:ghostwhite;
+background-image:url("rice/bluebg.png");
+padding:10px;
+image-rendering:pixelated;
+cursor: url('toroinoue.ico'), auto;
+display: flex;
+justify-content: center;
+}
+    
+.container {
+border:1px dashed #6b88ad;
+display: inline-block;
+text-align:center;
+padding:10px;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+background: rgba(255, 255, 255, .5);
+border-radius:10px;
+}
+
+.header {
+text-align:center;
+}
+
+.welcome {
+text-align:center;
+text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+width:450px;
+margin:auto;
+}
+        
+.tab {
+border-top: 1px solid #809bb8;
+border-left: 1px solid #809bb8;
+border-right: 1px solid #809bb8;
+border-bottom:1px dashed #809bb8;
+border-radius:5px 5px 0px 0px;
+padding:5px;
+background: #C8DEF7;
+background: linear-gradient(0deg, rgba(200, 222, 247, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(200, 222, 247, 1) 100%);
+box-sizing: border-box;
+display:flex;
+align-items: center;
+width:100%;
+text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+width:500px;
+margin:auto;
+}
+        
+.boxes {
+display:flex;
+flex-direction: row;
+justify-content: flex-end;
+gap:5px;
+width:100px;
+border:0px solid black;
+}
+
+.name {
+width:100%;
+display:flex;
+align-items: center;
+gap:5px;
+}
+
+.left, .middle, .right {
+width:13px;
+height:13px;
+text-align:center;
+border:1px solid #809bb8;
+background-color:#FCFCFC;
+padding:1px;
+}
+
+.left:hover {
+width:13px;
+height:13px;
+text-align:center;
+border:1px solid #809bb8;
+background-color:#CAD4DE;
+}
+
+.middle:hover {
+width:13px;
+height:13px;
+text-align:center;
+border:1px solid #809bb8;
+background-color:#CAD4DE;
+}
+
+.right:hover {
+width:13px;
+height:13px;
+text-align:center;
+border:1px solid #809bb8;
+background-color:#CAD4DE;
+}
+    
+canvas {
+box-sizing: border-box;
+border: 1px solid #809bb8;
+border-top:none;
+border-radius:0px 0px 5px 5px;
+cursor: crosshair;
+margin:auto;
+width:500px;
+height:500px;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.colors {
+display: flex;
+flex-direction: row;
+justify-content: center;
+flex-wrap: wrap;
+gap:10px;
+width:500px;
+margin:auto;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+.picker {
+border: 1px dashed #809bb8;
+width: 38px;
+height: 38px;
+}
+
+button {
+border: 1px solid #809bb8;
+padding:5px 10px 5px 10px;
+font-family:ms ui gothic;
+font-size:14px;
+color:#124375;
+background-color:white;
+border-radius:5px;
+}
+
+button:hover {
+border: 1px solid #809bb8;
+padding:5px 10px 5px 10px;
+font-family:ms ui gothic;
+font-size:14px;
+color:#124375;
+background-color:#b7cde4;
+border-radius:5px;
+}
+
+input[type="color"] {
+padding:0px;
+border: 1px dashed #809bb8;
+background:#e5ecf5;
+height:20px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 200px;
+  height: 2px;
+  border-radius: 5px;
+  background: #000;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background: url('rice/torocon.png');
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 0;
+  background: url('rice/torocon.png');
+  cursor: pointer;
+}
+
+#gallery {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+gap: 10px;
+margin:auto;
+text-align:center;
+width:500px;
+}
+
+.image-container {
+border: 1px solid #809bb8;
+padding: 5px;
+font-size:14px;
+max-width: 100px;
+text-align: center;
+background-image:url("rice/cloth.png");
+/** bg img found on pinterest and dithered!! **/
+background-color: rgba(255, 255, 255, 0.486);
+background-blend-mode: overlay;
+text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+}
+
+.image-container img {
+width: 100px;
+display: block;
+border: 1px solid #809bb8;
+margin:auto;
+box-sizing: border-box;
+}
+
+summary {
+border: 1px dashed #809bb8;
+width:500px;
+margin:auto;
+margin-bottom:10px;
+padding:10px;
+border-radius:10px;
+background: #b3cbe8;
+background: linear-gradient(90deg, rgba(179, 203, 232, 1) 0%, rgba(245, 249, 255, 1) 34%);
+text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+}
+
+@font-face {
+font-family:font;
+src:url("font/azuki.ttf");
+}
+
+.header {
+font-family:font;
+font-size:20-px;
+color:#124375;
+text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+<div class="header"><img src="rice/drawboxlogo.png"></div>
+	<div class="welcome">welcome to the bajo drawbox! feel free to draw anything but please refrain from drawing anything too explicit! thank you! // <a href="/"><b>go back home!</b></a></div>
+<br>
+
+	<button onclick="Restore()">undo</button>
+    <button onclick="Clear()">clear</button>
+    
+    <input type="color" oninput="stroke_color = this.value">
+    
+    <input type="range" min="1" max="100" oninput="stroke_width = this.value" class="slider">
+    
+    <button id="submit">submit drawing</button>
+    <p id="status"></p>
+
+    <div class="tab">
+    	
+    <div class="name">https://bajo.wtf/drawbox</div>
+    
+    <div class="boxes">
+    	<div class="left"><img src="rice/icona.png"></div>
+    	<div class="middle"><img src="rice/iconb.png"></div>
+    	<div class="right"><img src="rice/iconc.png"></div>
+    </div>
+    
+    </div>
+    <canvas id="drawboxcanvas" width="500" height="500"></canvas>
+    <br>
+    
+    <div class="colors">
+    <div onclick="change_color(this)" style="background:black" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:white" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:gray" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:red" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:blue" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:yellow" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:orange" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:green" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:purple" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:pink" class="stroke-color picker"></div>
+    
+    <div onclick="change_color(this)" style="background:#e5ecf5" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#adc4e2" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#b9bccb" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#8ca9cd" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#6b88ad" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#84aad1" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#b2c8df" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#b7cde4" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#d9e4ef" class="stroke-color picker"></div>
+    <div onclick="change_color(this)" style="background:#c3cfdf" class="stroke-color picker"></div>
+    </div>
+
+	
+    <h1 class="header">thank you (:</h1>
+    <details>
+    <summary>view gallery</summary><div id="gallery">Loading images...</div>
+    </details>
+    
+    <script src="drawbox.js"></script>
+
+    </div>
+
+
+</body></html>
