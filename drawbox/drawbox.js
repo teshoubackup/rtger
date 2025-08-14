@@ -15,7 +15,7 @@
 const GOOGLE_FORM_ID = "1FAIpQLSfFxmaycacWiaYIHjyKEo39GQu9ABY9nCDpe0jg_93AixzU2Q";
 const ENTRY_ID = "entry.863759224=eee";
 const GOOGLE_SHEET_ID = "1YbG-XpYp48EgXqhEYyPbtvIXx3L2CazjUrZrflwucfw";
-const DISPLAY_IMAGES = true;
+const DISPLAY_IMAGES = false;
 
 /*
         
@@ -197,3 +197,4 @@ async function fetchImages() {
 
 
 fetchImages();
+
